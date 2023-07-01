@@ -69,4 +69,9 @@ router.put(
 
 router.delete("/note/:id", deleteNote);
 
+router.use((err, req, res, next) => {
+  console.log(err);
+  res.json({ message: "error in router handler" });
+});
+
 export default router;
