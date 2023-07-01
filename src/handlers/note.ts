@@ -40,7 +40,15 @@ export const createNote = async (req, res) => {
   }
 
   const note = await prisma.note.create({
-    data: req.body,
+    data: {
+      title: req.body.title,
+      body: req.body.body,
+      season: req.body.season,
+      episode: req.body.episode,
+      timestamp: req.body.timestamp,
+      tag: req.body.tag,
+      media: { connect: { id: media.id } },
+    },
   });
 
   res.json({ data: note });

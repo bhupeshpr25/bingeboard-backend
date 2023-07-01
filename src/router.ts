@@ -8,6 +8,13 @@ import {
   getOneMedia,
   updateMedia,
 } from "./handlers/media";
+import {
+  createNote,
+  deleteNote,
+  getNotes,
+  getOneNote,
+  updateNote,
+} from "./handlers/note";
 
 const router = Router();
 
@@ -33,9 +40,9 @@ router.delete("/media/:id", deleteMedia);
  * NOTE
  */
 
-router.get("/note", (req, res) => {});
+router.get("/note", getNotes);
 
-router.get("/note/:id", (req, res) => {});
+router.get("/note/:id", getOneNote);
 
 router.post(
   "/note",
@@ -46,8 +53,7 @@ router.post(
   body("timestamp").optional(),
   body("tag").optional(),
   body("mediaId").exists().isString(),
-  handleInputErrors,
-  (req, res) => {}
+  createNote
 );
 
 router.put(
@@ -58,9 +64,9 @@ router.put(
   body("episode").optional(),
   body("timestamp").optional(),
   body("tag").optional(),
-  (req, res) => {}
+  updateNote
 );
 
-router.delete("/note/:id", (req, res) => {});
+router.delete("/note/:id", deleteNote);
 
 export default router;
