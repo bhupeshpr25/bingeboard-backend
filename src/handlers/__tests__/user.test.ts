@@ -3,7 +3,11 @@ import * as user from "../user";
 describe("user handler", () => {
   it("should create a new user", async () => {
     const req = {
-      body: { username: "hello", email: "hello@hello.com", password: "hi" },
+      body: {
+        username: "hello",
+        email: "hello@hello.com",
+        password: "hellohello",
+      },
     };
     const res = {
       json({ token }) {
