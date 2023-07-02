@@ -10,7 +10,7 @@ describe("user handler", () => {
         expect(token).toBeTruthy();
       },
     };
-    await user.createNewUser(req, res, () => {});
+    await user.signup(req, res, () => {});
   });
   jest.setTimeout(5000000);
 });
