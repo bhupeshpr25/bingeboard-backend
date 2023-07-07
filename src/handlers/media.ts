@@ -24,6 +24,9 @@ export const getOneMedia = async (req, res) => {
       id,
       userId: req.user.id,
     },
+    include: {
+      notes: true,
+    },
   });
 
   res.json({ data: media });
