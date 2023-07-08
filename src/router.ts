@@ -64,7 +64,9 @@ router.put(
   body("body").optional(),
   body("season").optional(),
   body("episode").optional(),
-  body("timestamp").optional(),
+  body("timestampHr").optional(),
+  body("timestampMin").optional(),
+  body("timestampSec").optional(),
   body("tag").optional(),
   updateNote
 );
