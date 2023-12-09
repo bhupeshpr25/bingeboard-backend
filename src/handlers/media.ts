@@ -40,6 +40,7 @@ export const createMedia = async (req, res, next) => {
         title: req.body.title,
         type: req.body.type,
         description: req.body.description,
+        link: req.body.link,
         userId: req.user.id,
       },
     });
@@ -62,6 +63,7 @@ export const updateMedia = async (req, res) => {
       title: req.body.title,
       type: req.body.type,
       description: req.body.description,
+      link: req.body.link,
     },
   });
 
